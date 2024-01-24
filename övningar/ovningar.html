@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta author="Fredrik Söderberg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Övningar</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="../index.html">Hem</a></li>
+            <li><a href="tran-plan.html">Träningsplanering</a></li>
+            <li><a href="tran-dag.html">Träningsdagbok</a></li>
+            <li><a href="mat-plan.html">Matchplanering</a></li>
+            <li><a href="mat-dag.html">Matchdagbok</a></li>
+            <li><a href="spleare.html">Spelare</a></li>
+            <!-- <li><a href="barcodeProject/index.html">Streckkoder</a></li> -->
+            <!--         <li><a href="https://script.google.com/macros/s/AKfycbyvK0gD3Sd-Gg78qJ34IOi-kUakqgOKvxCHaLqTlbv9xPge0wzsh6yrjLBZGU3MQAau/exec">Testpage</a></li> -->
+        </ul>
+    </nav>
+    <div class="area">
+
+        <div class="container-left">
+            <div class="form">
+                <button id="ny-övn">Ny övning</button>
+                <button id="spar-övn">Spara övning</button>
+                <button id="hämt-övn">Hämta övning</button>
+                <button id="hem">Hem</button>
+
+            </div>
+            <br><br>
+            <div class="time">
+
+                <div id="date"></div>
+                <div id="clock"></div>
+
+            </div>
+
+        </div>
+
+        <div class="container-right">
+            <div class="left-side">
+
+                <div class="upper">
+                    <button id="uppvärmning" onclick="displayLinks('uppvärmning')">Uppvärmning</button>
+                    <button id="teknik" onclick="displayLinks('teknik')">Teknik</button>
+                    <button id="taktik" onclick="displayLinks('taktik')">Taktik</button>
+                </div>
+                
+
+                <div class="lower">                    
+                    <header>
+                        <h1>Övningar</h1>
+                    </header>
+
+                    <div id="dynamicLinks">
+                        <!-- This is where dynamic links will be displayed -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <h1>Övningar</h1>
+                <div id="dynamicLinks-right">
+                    <!-- This is where dynamic links will be displayed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="clock.js"></script>
+    <script src="date.js"></script>
+    <script>
+
+        document.getElementById("hem").addEventListener("click", function () {
+            window.location.href = "../index.html";
+        });
+
+        function displayLinks(category) {
+            // Get the div where dynamic links will be displayed
+            var dynamicLinksDiv = document.getElementById("dynamicLinks");
+
+            // Clear the existing content
+            dynamicLinksDiv.innerHTML = "";
+
+            // Add links based on the category
+            if (category === 'uppvärmning') {
+                dynamicLinksDiv.innerHTML = "<a href='#'>Link 1</a><br><a href='#'>Link 2</a>";
+            } else if (category === 'teknik') {
+                dynamicLinksDiv.innerHTML = "<a href='#'>Link 3</a><br><a href='#'>Link 4</a>";
+            } else if (category === 'taktik') {
+                dynamicLinksDiv.innerHTML = "<a href='#'>Link 5</a><br><a href='#'>Link 6</a>";
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
